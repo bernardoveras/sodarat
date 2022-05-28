@@ -9,7 +9,7 @@
 - [ ] Dialog
 - [ ] Alert Dialog
 - [ ] Confirm Dialog
-- [ ] Emoji
+- [ ] Emojis
 - [ ] Feedbacks (Notifications)
 - [ ] App Bar
 - [ ] Home App Bar
