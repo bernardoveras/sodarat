@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sodarat/components/atoms/spinners/sodarat_circular_spinner.dart';
+import 'package:sodarat/components/atoms/spinners/sodarat_dot_spinner.dart';
 import 'package:sodarat/sodarat.dart';
 
 void main() {
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
         colorSchemeSeed: $primary_color,
         useMaterial3: true,
       ),
-      home: HomePage(),
+      home: const HomePage(),
     );
   }
 }
@@ -41,6 +42,7 @@ class HomePage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: const <Widget>[
             SodaratCircularSpinner(),
+            SodaratDotSpinner(),
           ],
         ),
       ),
