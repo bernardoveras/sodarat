@@ -19,7 +19,7 @@ class $adaptive_color {
   // Semantic colors
   static Color positive() => $positive_color;
   static Color positive_container() => $positive_container_color;
-  static  Color on_positive_container() => $on_positive_container_color;
+  static Color on_positive_container() => $on_positive_container_color;
 
   static Color negative() => $negative_color;
   static Color negative_container() => $negative_container_color;
@@ -49,6 +49,7 @@ class $adaptive_color {
 
   //Others
   static Color background(BuildContext context) => _isDarkMode(context) ? $dark_background : $light_background;
+  static Color on_background_color(BuildContext context) => _isDarkMode(context) ? const Color(0xFFFFFFFF) : const Color(0xff27272a);
   static Color tooltip(BuildContext context) => _isDarkMode(context) ? $dark_tooltip : $light_tooltip;
   static Color stroke(BuildContext context) => _isDarkMode(context) ? $dark_stroke : $light_stroke;
 }

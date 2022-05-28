@@ -1,18 +1,17 @@
 - [ ] Button
 - [ ] Icon Button
-- [ ] Spinner
-- [ ] TextField
-  - [ ] Filled Text Field
-  - [ ] Outlined Text Field
-  - [ ] Text Area
+- [x] Spinner
+- [ ] Overlay Spinner
+- [ ] Filled Text Field
+- [ ] Outlined Text Field
+- [ ] Text Area
 - [ ] Dialog
-  - [ ] Alert Dialog
-  - [ ] Confirm Dialog
+- [ ] Alert Dialog
+- [ ] Confirm Dialog
 - [ ] Emoji
 - [ ] Feedbacks (Notifications)
 - [ ] App Bar
-  - [ ] Home
+- [ ] Home App Bar
   - [ ] Common
 - [ ] Empty State
-  - [ ] Empty State with CTA
-- [ ] Overlay Spinner
+[ ] Empty State with CTA
