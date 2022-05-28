@@ -2,7 +2,7 @@
 - [ ] Icon Button
 - [x] Spinner
 - [x] Dot Spinner
-- [ ] Overlay Spinner
+- [x] Overlay Spinner
 - [ ] Filled Text Field
 - [ ] Outlined Text Field
 - [ ] Text Area
