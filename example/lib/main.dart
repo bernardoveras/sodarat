@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sodarat/components/atoms/sodarat_spinner.dart';
+import 'package:sodarat/components/atoms/spinners/sodarat_circular_spinner.dart';
 import 'package:sodarat/sodarat.dart';
 
 void main() {
@@ -40,7 +40,7 @@ class HomePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: const <Widget>[
-            SodaratSpinner(),
+            SodaratCircularSpinner(),
           ],
         ),
       ),
