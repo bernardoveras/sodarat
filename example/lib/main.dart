@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:loader_overlay/loader_overlay.dart';
-import 'package:sodarat/components/molecules/overlays/spinner_overlay.dart';
 import 'package:sodarat/sodarat.dart';
 
 void main() {
@@ -22,7 +21,6 @@ class MyApp extends StatelessWidget {
       home: const LoaderOverlay(
         useDefaultLoading: false,
         disableBackButton: true,
-        overlayWidget: SpinnerOverlay(),
         overlayColor: Colors.transparent,
         child: HomePage(),
       ),
@@ -59,12 +57,15 @@ class HomePage extends HookWidget {
             const SizedBox(height: $spacing_4),
             const SodaratDotSpinner(),
             const SizedBox(height: $spacing_4),
+            ResultIcon.error(),
+            const SizedBox(height: $spacing_4),
             ElevatedButton(
               child: const Text('Abrir loading'),
               onPressed: () {
                 abrirLoading();
               },
             ),
+            const SizedBox(height: $spacing_4),
           ],
         ),
       ),

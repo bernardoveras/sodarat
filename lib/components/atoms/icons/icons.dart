@@ -1,1 +1,1 @@
-export 'result/result_success_icon.dart';
+export 'result/result_icon.dart';

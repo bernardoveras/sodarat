@@ -8,7 +8,7 @@ const $primary_color_hover = Color(0xff82a1ff);
 const $on_primary_color = Color(0xffffffff);
 
 // Semantic colors
-const $positive_color = Color(0xff006e00);
+const $positive_color = Color(0xff04D361);
 const $positive_container_color = Color(0xffdcf9e1);
 const $on_positive_container_color = Color(0xff0d4816);
 
