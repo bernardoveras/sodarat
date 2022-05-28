@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:sodarat/components/atoms/spinners/sodarat_circular_spinner.dart';
-import 'package:sodarat/components/atoms/spinners/sodarat_dot_spinner.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:loader_overlay/loader_overlay.dart';
+import 'package:sodarat/components/molecules/overlays/spinner_overlay.dart';
 import 'package:sodarat/sodarat.dart';
 
 void main() {
@@ -18,16 +19,29 @@ class MyApp extends StatelessWidget {
         colorSchemeSeed: $primary_color,
         useMaterial3: true,
       ),
-      home: const HomePage(),
+      home: const LoaderOverlay(
+        useDefaultLoading: false,
+        disableBackButton: true,
+        overlayWidget: SpinnerOverlay(),
+        overlayColor: Colors.transparent,
+        child: HomePage(),
+      ),
     );
   }
 }
 
-class HomePage extends StatelessWidget {
+// ignore: must_be_immutable
+class HomePage extends HookWidget {
   const HomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    Future<void> abrirLoading() async {
+      SpinnerOverlay.show(context);
+
+      return Future.delayed(const Duration(seconds: 2))..whenComplete(() => SpinnerOverlay.hide(context));
+    }
+
     return Scaffold(
       backgroundColor: $adaptive_color.background(context),
       appBar: AppBar(
@@ -40,9 +54,17 @@ class HomePage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: const <Widget>[
-            SodaratCircularSpinner(),
-            SodaratDotSpinner(),
+          children: <Widget>[
+            const SodaratCircularSpinner(),
+            const SizedBox(height: $spacing_4),
+            const SodaratDotSpinner(),
+            const SizedBox(height: $spacing_4),
+            ElevatedButton(
+              child: const Text('Abrir loading'),
+              onPressed: () {
+                abrirLoading();
+              },
+            ),
           ],
         ),
       ),

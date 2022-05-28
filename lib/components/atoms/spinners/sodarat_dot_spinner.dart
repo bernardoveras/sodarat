@@ -51,7 +51,7 @@ class SodaratDotSpinner extends HookWidget implements ISodaratSpinner {
 
   Widget _itemBuilder(int index) => DecoratedBox(
         decoration: BoxDecoration(
-          color: color ?? $adaptive_color.on_background_color(useContext()),
+          color: color ?? $adaptive_color.primary(),
           shape: BoxShape.circle,
         ),
       );
