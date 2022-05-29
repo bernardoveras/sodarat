@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'painters/happy_emoji_painter.dart';
+import 'painters/painters.dart';
 
 class Emoji extends StatelessWidget {
   Emoji._(CustomPainter painter, double size) {
@@ -10,9 +10,10 @@ class Emoji extends StatelessWidget {
     );
   }
 
-  factory Emoji.happy({double size = 32.0}) {
-    return Emoji._(HappyEmojiPainter(), size);
-  }
+  factory Emoji.happy({double size = 32.0}) => Emoji._(HappyEmojiPainter(), size);
+  factory Emoji.sad({double size = 32.0}) => Emoji._(SadEmojiPainter(), size);
+  factory Emoji.spy({double size = 32.0}) => Emoji._(SpyEmojiPainter(), size);
+  factory Emoji.party({double size = 32.0}) => Emoji._(PartyEmojiPainter(), size);
 
   late final Widget _emoji;
 

@@ -66,7 +66,15 @@ class HomePage extends HookWidget {
               },
             ),
             const SizedBox(height: $spacing_4),
-            Emoji.happy(),
+            Wrap(
+              spacing: $spacing_4,
+              children: [
+                Emoji.happy(),
+                Emoji.sad(),
+                Emoji.party(),
+                Emoji.spy(),
+              ],
+            ),
           ],
         ),
       ),
