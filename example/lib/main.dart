@@ -105,6 +105,32 @@ class HomePage extends HookWidget {
                 ),
               ],
             ),
+            const SizedBox(height: $spacing_5),
+            Wrap(
+              spacing: $spacing_4,
+              runSpacing: $spacing_4,
+              children: [
+                SodaratButton(
+                  text: 'Label',
+                  onPressed: () {},
+                  icon: const Icon(Icons.add),
+                  tooltip: 'Default',
+                ),
+                SodaratButton(
+                  text: 'Label',
+                  loading: true,
+                  onPressed: () {},
+                  icon: const Icon(Icons.add),
+                  tooltip: 'Loading',
+                ),
+                const SodaratButton(
+                  text: 'Label',
+                  onPressed: null,
+                  icon: Icon(Icons.add),
+                  tooltip: 'Disabled',
+                ),
+              ],
+            ),
           ],
         ),
       ),

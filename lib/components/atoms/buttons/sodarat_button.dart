@@ -46,12 +46,24 @@ class SodaratButton extends StatelessWidget {
   final BorderRadiusGeometry? borderRadius;
 
   bool get canPress => disabled == false && loading == false;
+  bool get hasIcon => icon != null;
 
   Widget _buildChild() {
     if (loading == true) {
       return SodaratCircularSpinner(size: 16.0, color: $adaptive_color.on_primary());
     } else if (text != null) {
-      return Text(text!);
+      return Row(
+        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          if (icon != null) ...{
+            icon!,
+            const SizedBox(width: $spacing_2),
+          },
+          Text(text!),
+        ],
+      );
     } else if (child != null) {
       return child!;
     } else {
@@ -84,7 +96,7 @@ class SodaratButton extends StatelessWidget {
             ),
       ),
       padding: MaterialStateProperty.all(
-        const EdgeInsets.symmetric(horizontal: $spacing_6, vertical: $spacing_2),
+        EdgeInsets.symmetric(horizontal: hasIcon ? $spacing_4 : $spacing_6, vertical: $spacing_2),
       ),
       shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: borderRadius ?? $border_radius_default)),
     );
