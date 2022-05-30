@@ -8,10 +8,12 @@ class SodaratCircularSpinner extends StatelessWidget implements ISodaratSpinner 
     super.key,
     this.strokeWidth = 2.0,
     this.size = 24.0,
+    this.color,
   });
 
   final double strokeWidth;
   final double size;
+  final Color? color;
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +23,7 @@ class SodaratCircularSpinner extends StatelessWidget implements ISodaratSpinner 
       child: Center(
         child: CircularProgressIndicator(
           strokeWidth: strokeWidth,
-          color: $adaptive_color.on_background_color(context),
+          color: color ?? $adaptive_color.on_background_color(context),
         ),
       ),
     );

@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 // Primary color
 const $primary_color = Color(0xff3466ff);
 const $primary_color_hover = Color(0xff82a1ff);
+const $primary_color_disabled = Color(0xff3466ff);
 const $on_primary_color = Color(0xffffffff);
 
 // Semantic colors

@@ -82,6 +82,26 @@ class HomePage extends HookWidget {
                 Emoji.spy(),
               ],
             ),
+            const SizedBox(height: $spacing_5),
+            Wrap(
+              spacing: $spacing_4,
+              runSpacing: $spacing_4,
+              children: [
+                SodaratButton(
+                  text: 'Label',
+                  onPressed: () {},
+                ),
+                SodaratButton(
+                  text: 'Label',
+                  loading: true,
+                  onPressed: () {},
+                ),
+                const SodaratButton(
+                  text: 'Label',
+                  onPressed: null,
+                ),
+              ],
+            ),
           ],
         ),
       ),
