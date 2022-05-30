@@ -50,32 +50,32 @@ class HomePage extends HookWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Wrap(
-              spacing: $spacing_4,
-              children: const [
+            const Components(
+              title: 'Spinner',
+              components: [
                 SodaratCircularSpinner(),
                 SodaratDotSpinner(),
               ],
             ),
             const SizedBox(height: $spacing_5),
-            Wrap(
-              spacing: $spacing_4,
-              children: [
+            Components(
+              title: 'Result Icon',
+              components: [
                 ResultIcon.error(),
                 ResultIcon.success(),
               ],
             ),
+            // const SizedBox(height: $spacing_5),
+            // ElevatedButton(
+            //   child: const Text('Abrir loading'),
+            //   onPressed: () {
+            //     abrirLoading();
+            //   },
+            // ),
             const SizedBox(height: $spacing_5),
-            ElevatedButton(
-              child: const Text('Abrir loading'),
-              onPressed: () {
-                abrirLoading();
-              },
-            ),
-            const SizedBox(height: $spacing_5),
-            Wrap(
-              spacing: $spacing_4,
-              children: [
+            Components(
+              title: 'Emoji',
+              components: [
                 Emoji.happy(),
                 Emoji.sad(),
                 Emoji.party(),
@@ -83,10 +83,9 @@ class HomePage extends HookWidget {
               ],
             ),
             const SizedBox(height: $spacing_5),
-            Wrap(
-              spacing: $spacing_4,
-              runSpacing: $spacing_4,
-              children: [
+            Components(
+              title: 'Botão',
+              components: [
                 SodaratButton(
                   text: 'Label',
                   onPressed: () {},
@@ -106,22 +105,14 @@ class HomePage extends HookWidget {
               ],
             ),
             const SizedBox(height: $spacing_5),
-            Wrap(
-              spacing: $spacing_4,
-              runSpacing: $spacing_4,
-              children: [
+            Components(
+              title: 'Botão com icone',
+              components: [
                 SodaratButton(
                   text: 'Label',
                   onPressed: () {},
                   icon: const Icon(Icons.add),
                   tooltip: 'Default',
-                ),
-                SodaratButton(
-                  text: 'Label',
-                  loading: true,
-                  onPressed: () {},
-                  icon: const Icon(Icons.add),
-                  tooltip: 'Loading',
                 ),
                 const SodaratButton(
                   text: 'Label',
@@ -134,6 +125,41 @@ class HomePage extends HookWidget {
           ],
         ),
       ),
+    );
+  }
+}
+
+class Components extends StatelessWidget {
+  const Components({
+    Key? key,
+    required this.title,
+    required this.components,
+  }) : super(key: key);
+
+  final String title;
+  final List<Widget> components;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          title,
+          style: TextStyle(
+            fontSize: $font_size_3,
+            fontWeight: $font_weight_bold,
+            fontFamily: $font_family_inter,
+            color: $adaptive_color.on_background_color(context),
+          ),
+        ),
+        const SizedBox(height: $spacing_4),
+        Wrap(
+          spacing: $spacing_4,
+          runSpacing: $spacing_4,
+          children: components,
+        ),
+      ],
     );
   }
 }
