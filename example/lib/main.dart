@@ -53,8 +53,14 @@ class HomePage extends HookWidget {
             const Components(
               title: 'Spinner',
               components: [
-                SodaratCircularSpinner(),
-                SodaratDotSpinner(),
+                SodaratTooltip(
+                  message: 'Circular Spinner',
+                  child: SodaratCircularSpinner(),
+                ),
+                SodaratTooltip(
+                  message: 'Dot Spinner',
+                  child: SodaratDotSpinner(),
+                ),
               ],
             ),
             const SizedBox(height: $spacing_5),
@@ -82,10 +88,22 @@ class HomePage extends HookWidget {
             Components(
               title: 'Emoji',
               components: [
-                Emoji.happy(),
-                Emoji.sad(),
-                Emoji.party(),
-                Emoji.spy(),
+                SodaratTooltip(
+                  message: 'Happy',
+                  child: Emoji.happy(),
+                ),
+                SodaratTooltip(
+                  message: 'Sad',
+                  child: Emoji.sad(),
+                ),
+                SodaratTooltip(
+                  message: 'Party',
+                  child: Emoji.party(),
+                ),
+                SodaratTooltip(
+                  message: 'Spy',
+                  child: Emoji.spy(),
+                ),
               ],
             ),
             const SizedBox(height: $spacing_5),
