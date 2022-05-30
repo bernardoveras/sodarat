@@ -18,6 +18,8 @@ class SodaratButton extends StatelessWidget {
     this.height = 40,
     this.width,
     this.icon,
+    this.tooltip = '',
+    this.preferTooltipBelow = true,
   })  : assert(
           !(text is String && child is Widget) && !(text == null && child == null),
           'You should specify either a text or a child',
@@ -25,6 +27,7 @@ class SodaratButton extends StatelessWidget {
         super(key: key);
 
   final String? text;
+  final String tooltip;
   final Widget? child;
   final Widget? icon;
   final double height;
@@ -38,6 +41,7 @@ class SodaratButton extends StatelessWidget {
   final Color? foregroundColor;
   final TextStyle? textStyle;
   final FocusNode? focusNode;
+  final bool preferTooltipBelow;
 
   bool get canPress => disabled == false && loading == false;
 
@@ -85,16 +89,30 @@ class SodaratButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: height,
-      width: width,
-      child: ElevatedButton(
-        onPressed: canPress ? onPressed : () {},
-        style: _getButtonStyle(),
-        onHover: onHover,
-        onLongPress: onLongPress,
-        focusNode: focusNode,
-        child: _buildChild(),
+    return Tooltip(
+      message: tooltip,
+      preferBelow: preferTooltipBelow,
+      decoration: BoxDecoration(
+        color: $adaptive_color.tooltip(context),
+        borderRadius: $border_radius_4,
+      ),
+      textStyle: TextStyle(
+        color: $adaptive_color.text_on_tooltip(context),
+        fontSize: $font_size_1,
+        fontWeight: $font_weight_medium,
+        fontFamily: $font_family_inter,
+      ),
+      child: SizedBox(
+        height: height,
+        width: width,
+        child: ElevatedButton(
+          onPressed: canPress ? onPressed : () {},
+          style: _getButtonStyle(),
+          onHover: onHover,
+          onLongPress: onLongPress,
+          focusNode: focusNode,
+          child: _buildChild(),
+        ),
       ),
     );
   }

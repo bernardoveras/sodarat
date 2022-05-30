@@ -90,15 +90,18 @@ class HomePage extends HookWidget {
                 SodaratButton(
                   text: 'Label',
                   onPressed: () {},
+                  tooltip: 'Default',
                 ),
                 SodaratButton(
                   text: 'Label',
                   loading: true,
                   onPressed: () {},
+                  tooltip: 'Loading',
                 ),
                 const SodaratButton(
                   text: 'Label',
                   onPressed: null,
+                  tooltip: 'Disabled',
                 ),
               ],
             ),
