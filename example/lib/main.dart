@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Sodarat Design System',
       theme: ThemeData(
         colorSchemeSeed: $primary_color,
         useMaterial3: true,
@@ -29,17 +29,18 @@ class MyApp extends StatelessWidget {
   }
 }
 
-// ignore: must_be_immutable
 class HomePage extends HookWidget {
   const HomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    Future<void> abrirLoading() async {
-      SpinnerOverlay.show(context);
+    // Future<void> abrirLoading() async {
+    //   SpinnerOverlay.show(context);
 
-      return Future.delayed(const Duration(seconds: 2))..whenComplete(() => SpinnerOverlay.hide(context));
-    }
+    //   return Future.delayed(const Duration(seconds: 2))..whenComplete(() => SpinnerOverlay.hide(context));
+    // }
+
+    final saldoDoMesIsVisible = useValueNotifier(true);
 
     return Scaffold(
       appBar: const HomeAppBar(username: 'Bernardo Veras'),
@@ -146,6 +147,31 @@ class HomePage extends HookWidget {
                 ),
               ],
             ),
+            const SizedBox(height: $spacing_5),
+            AnimatedBuilder(
+                animation: saldoDoMesIsVisible,
+                builder: (context, child) {
+                  return Components(
+                    title: 'Textos',
+                    components: [
+                      CheckboxListTile(
+                        value: saldoDoMesIsVisible.value,
+                        onChanged: (v) {
+                          saldoDoMesIsVisible.value = v ?? true;
+                        },
+                        title: const Text('Visibilidade do saldo do mês'),
+                        contentPadding: EdgeInsets.zero,
+                      ),
+                      SodaratTooltip(
+                        message: 'Saldo do mês',
+                        child: SaldoDoMesText(
+                          value: 46.57,
+                          visible: saldoDoMesIsVisible.value,
+                        ),
+                      ),
+                    ],
+                  );
+                }),
           ],
         ),
       ),

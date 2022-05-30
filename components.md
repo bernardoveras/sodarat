@@ -9,9 +9,10 @@
 - [ ] Dialog
 - [ ] Alert Dialog
 - [ ] Confirm Dialog
+- [x] Tooltip
 - [x] Emojis
 - [ ] Feedbacks (Notifications)
 - [ ] App Bar
 - [ ] Home App Bar
 - [ ] Empty State
-[ ] Empty State with CTA
+- [ ] Empty State with CTA
