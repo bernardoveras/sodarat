@@ -20,6 +20,7 @@ class SodaratButton extends StatelessWidget {
     this.icon,
     this.tooltip = '',
     this.preferTooltipBelow = true,
+    this.borderRadius,
   })  : assert(
           !(text is String && child is Widget) && !(text == null && child == null),
           'You should specify either a text or a child',
@@ -42,6 +43,7 @@ class SodaratButton extends StatelessWidget {
   final TextStyle? textStyle;
   final FocusNode? focusNode;
   final bool preferTooltipBelow;
+  final BorderRadiusGeometry? borderRadius;
 
   bool get canPress => disabled == false && loading == false;
 
@@ -84,6 +86,7 @@ class SodaratButton extends StatelessWidget {
       padding: MaterialStateProperty.all(
         const EdgeInsets.symmetric(horizontal: $spacing_6, vertical: $spacing_2),
       ),
+      shape: MaterialStateProperty.all(RoundedRectangleBorder(borderRadius: borderRadius ?? $border_radius_default)),
     );
   }
 
