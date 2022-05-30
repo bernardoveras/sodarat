@@ -104,19 +104,9 @@ class SodaratButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Tooltip(
+    return SodaratTooltip(
       message: tooltip,
       preferBelow: preferTooltipBelow,
-      decoration: BoxDecoration(
-        color: $adaptive_color.tooltip(context),
-        borderRadius: $border_radius_4,
-      ),
-      textStyle: TextStyle(
-        color: $adaptive_color.text_on_tooltip(context),
-        fontSize: $font_size_1,
-        fontWeight: $font_weight_medium,
-        fontFamily: $font_family_inter,
-      ),
       child: SizedBox(
         height: height,
         width: width,

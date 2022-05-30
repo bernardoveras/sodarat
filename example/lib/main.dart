@@ -61,8 +61,14 @@ class HomePage extends HookWidget {
             Components(
               title: 'Result Icon',
               components: [
-                ResultIcon.error(),
-                ResultIcon.success(),
+                SodaratTooltip(
+                  message: 'Error',
+                  child: ResultIcon.error(),
+                ),
+                SodaratTooltip(
+                  message: 'Success',
+                  child: ResultIcon.success(),
+                ),
               ],
             ),
             // const SizedBox(height: $spacing_5),
