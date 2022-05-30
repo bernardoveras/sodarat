@@ -5,3 +5,4 @@ export 'font_size.dart';
 export 'font_weight.dart';
 export 'radius.dart';
 export 'spacing.dart';
+export 'sizes.dart';

@@ -18,6 +18,7 @@ class MyApp extends StatelessWidget {
         colorSchemeSeed: $primary_color,
         useMaterial3: true,
       ),
+      debugShowCheckedModeBanner: false,
       home: const LoaderOverlay(
         useDefaultLoading: false,
         disableBackButton: true,
@@ -42,11 +43,12 @@ class HomePage extends HookWidget {
 
     return Scaffold(
       backgroundColor: $adaptive_color.background(context),
-      appBar: AppBar(
-        title: const Text('Sodarat'),
-        backgroundColor: $adaptive_color.primary(),
-        foregroundColor: $adaptive_color.on_primary(),
-      ),
+      // appBar: AppBar(
+      //   title: const Text('Sodarat'),
+      //   backgroundColor: $adaptive_color.primary(),
+      //   foregroundColor: $adaptive_color.on_primary(),
+      // ),
+      appBar: const HomeAppBar(username: 'Bernardo Veras'),
       body: Padding(
         padding: const EdgeInsets.all(24.0),
         child: Column(
